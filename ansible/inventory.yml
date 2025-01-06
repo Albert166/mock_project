@@ -1,0 +1,4 @@
+all:
+  hosts:
+    ec2:
+      ansible_host: 
