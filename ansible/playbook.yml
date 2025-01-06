@@ -87,4 +87,4 @@
         mode: '0644'
 
     - name: Start Container
-        ansible.builtin.shell: docker run -p 8080:8080 --mount type=bind,source=/home/ec2-user/config.yaml,target=/config/config.yaml --name gatus twinproduction/gatus
+        command: docker run -p 8080:8080 --mount type=bind,source=/home/ec2-user/config.yaml,target=/config/config.yaml --name gatus twinproduction/gatus
