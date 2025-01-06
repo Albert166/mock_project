@@ -1,0 +1,10 @@
+name: Ansible files & Deployment 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ansible-lint:
+    uses: ansible/ansible-content-actions/.github/workflows/ansible_lint.yaml@main
+    with:
+      args: '-p ansible'
