@@ -4,7 +4,7 @@
   remote_user: ec2-user  # Change remote user to your sudo user!
   become: true
   vars:
-    arch_mapping:  # Map ansible architecture {{ ansible_architecture }} names to Docker's architecture names
+    arch_mapping:  
       x86_64: amd64
 
   tasks:
@@ -87,4 +87,4 @@
         mode: '0644'
 
     - name: Start Container
-        shell: docker run -p 8080:8080 --mount type=bind,source=/home/ec2-user/config.yaml,target=/config/config.yaml --name gatus twinproduction/gatus
+      shell: docker run -p 8080:8080 --mount type=bind,source=/home/ec2-user/config.yaml,target=/config/config.yaml --name gatus twinproduction/gatus
