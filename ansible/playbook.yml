@@ -44,7 +44,7 @@
 
     - name: Copy file with new permissions
       ansible.builtin.copy:
-        src: ansible/gatus/config.yaml
+        src: gatus/config.yaml
         dest: config.yaml
         mode: '0644'
         owner: ubuntu
