@@ -1,4 +1,4 @@
-name: Deploy with Ansible
+name: Deploy gatus docker image on ec2 instance
 
 on:
   workflow_dispatch:

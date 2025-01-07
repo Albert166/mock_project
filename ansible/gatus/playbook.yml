@@ -3,7 +3,7 @@
 tasks:
     - name: Copy file with new permissions
       ansible.builtin.copy:
-        src: ${pwd}/config.yaml
+        src: ansible/gatus/config.yaml
         dest: config.yaml
         mode: '0644'
         owner: ec2-user

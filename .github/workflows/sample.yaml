@@ -31,4 +31,4 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: Get public IP
-        run: echo "The public IP is $(terraform output instance_ip)" > ip.txt
+        run: echo "The public IP is $(terraform output instance_ip)" 
