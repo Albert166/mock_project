@@ -1,4 +1,5 @@
 all:
   hosts:
     ec2:
-      ansible_host: 
+      ansible_host:
+      ansible_user: ec2-user
