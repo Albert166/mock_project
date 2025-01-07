@@ -56,6 +56,18 @@ resource "aws_subnet" "main-a" {
     Name = "main-subnet"
   }
 }
+
+# Public Subnet
+
+resource "aws_subnet" "main-b" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "main-subnet"
+  }
+}
+
 # Security Group
 resource "aws_security_group" "https" {
   vpc_id = aws_vpc.main.id
@@ -111,4 +123,7 @@ resource "aws_security_group" "ssh" {
   }
 }
 
-
+resource "aws_route_table_association" "main" {
+  subnet_id      = aws_subnet.main-b.id
+  route_table_id = aws_route_table.main.id
+}
