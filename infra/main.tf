@@ -7,8 +7,10 @@ resource "aws_instance" "example" {
   ami           = "ami-0a628e1e89aaedf80"
   instance_type = var.instance_type
   key_name = "mockproject"
+  vpc_security_group_ids = [aws_security_group.https.id, aws_security_group.ssh.id]
+  subnet_id = aws_subnet.main-a.id
   tags = {
-    Name = "ExampleInstance"
+    Name = "Gatus Instance"
   }
 }
 
