@@ -42,6 +42,12 @@
         state: latest
         update_cache: true
 
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /config
+        state: directory
+        mode: '0755'
+
     - name: Copy file with new permissions
       ansible.builtin.copy:
         src: gatus/config.yaml
