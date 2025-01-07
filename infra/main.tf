@@ -71,7 +71,7 @@ resource "aws_subnet" "main-b" {
 # Security Group
 resource "aws_security_group" "https" {
   vpc_id = aws_vpc.main.id
-  name   = "Allow Glogal HTTP"
+  name   = "Allow Global HTTP"
 
   ingress {
     from_port   = 80
