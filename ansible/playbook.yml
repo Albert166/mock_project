@@ -45,7 +45,7 @@
     - name: Copy file with new permissions
       ansible.builtin.copy:
         src: gatus/config.yaml
-        dest: ./config.yaml
+        dest: /config/config.yaml
         mode: '0644'
         owner: ubuntu
         group: ubuntu
@@ -70,6 +70,6 @@
           - 8080:8080
         mounts:
           - type: bind
-            source: /config.yaml
+            source: /config/config.yaml
             target: /config/config.yaml
       with_sequence: count={{ container_count }}
