@@ -79,3 +79,11 @@
             source: /config/config.yaml
             target: /config/config.yaml
       with_sequence: count={{ container_count }}
+
+    - name: Check running Docker containers
+      ansible.builtin.command: docker ps
+      register: docker_ps_output
+
+    - name: Display running containers
+      ansible.builtin.debug:
+        msg: "{{ docker_ps_output.stdout }}"
