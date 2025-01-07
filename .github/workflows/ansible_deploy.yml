@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Ansible Playbook
         env:
-          ANSIBLE_USER: ec2-user
+          ANSIBLE_USER: ubuntu
           ANSIBLE_HOST_KEY_CHECKING: False
         run: |
           ansible-playbook -i inventory.yml playbook.yml --private-key private_key.pem -u ec2-user
