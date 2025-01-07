@@ -6,7 +6,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "ami-05d38da78ce859165"
   instance_type = var.instance_type
-  key_name = mock_project1
+  key_name = mockproject1
   tags = {
     Name = "ExampleInstance"
   }
