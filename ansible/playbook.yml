@@ -78,6 +78,7 @@
           - type: bind
             source: /config/config.yaml
             target: /config/config.yaml
+        detach: true
       with_sequence: count={{ container_count }}
 
     - name: Check running Docker containers
