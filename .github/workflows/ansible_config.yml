@@ -31,9 +31,9 @@ jobs:
           sudo apt update
           sudo apt install -y ansible
       
-      - name: Install boto3
+      - name: Install amazon-aws pluigin
         shell: bash
-        run : pip3 install boto3 botocore
+        run : ansible-galaxy collection install amazon.aws
 
       - name: Run Ansible Playbook
         env:
