@@ -26,10 +26,14 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y ansible
+      
+      - name: Install boto3
+        shell: bash
+        run : pip3 install boto3 botocore
 
       - name: Run Ansible Playbook
         env:
           ANSIBLE_USER: ubuntu
           ANSIBLE_HOST_KEY_CHECKING: False
         run: |
-          ansible-playbook -i inventory.yml gatus/playbook.yml --private-key private_key.pem -u ubuntu
+          ansible-playbook -i aws_ec2.yml gatus/playbook.yml --private-key private_key.pem -u ubuntu

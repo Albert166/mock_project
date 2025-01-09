@@ -3,8 +3,6 @@ regions:
   - eu-central-1
 keyed_groups:
   - key: tags.Name
-filters:
-  - instance-state-name: running
 compose:
   ansible_host: public_ip_address
   ansible_user: ubuntu
