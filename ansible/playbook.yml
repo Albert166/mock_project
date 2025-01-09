@@ -1,5 +1,5 @@
 - hosts: all
-  become: true
+  become: false
   vars:
     container_count: 1
     default_container_name: gatus
