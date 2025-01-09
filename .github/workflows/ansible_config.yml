@@ -24,6 +24,11 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
+
+      - name: Set Up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
           
       - name: Install Ansible
         shell: bash
