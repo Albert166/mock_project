@@ -4,7 +4,7 @@
     container_count: 1
     default_container_name: gatus
     default_container_image: twinproduction/gatus
-    default_container_command:
+    default_container_command: sleep 1d
 
   tasks:
     - name: Install aptitude
@@ -79,6 +79,7 @@
             source: /config/config.yaml
             target: /config/config.yaml
         detach: true
+        command: "{{ default_container_command }}"
       with_sequence: count={{ container_count }}
 
     - name: Check running Docker containers
