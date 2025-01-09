@@ -44,14 +44,14 @@
 
     - name: Create a directory if it does not exist
       ansible.builtin.file:
-        path: home/ubuntu/config
+        path: /home/ubuntu/config
         state: directory
         mode: '0755'
 
     - name: Copy file with new permissions
       ansible.builtin.copy:
         src: gatus/config.yaml
-        dest: home/ubuntu/config/config.yaml
+        dest: /home/ubuntu/config/config.yaml
         mode: '0644'
         owner: ubuntu
         group: ubuntu
@@ -76,7 +76,7 @@
           - 8080:8080
         mounts:
           - type: bind
-            source: home/ubuntu/config/config.yaml
+            source: /home/ubuntu/config/config.yaml
             target: /config/config.yaml
         detach: true
         command: "{{ default_container_command }}"
