@@ -1,5 +1,11 @@
 - hosts: all
-
+- hosts: all
+  become: true
+  vars:
+    container_count: 1
+    default_container_name: gatus
+    default_container_image: twinproduction/gatus
+    default_container_command: sleep 1d
   tasks:
     - name: Copy file with new permissions
       ansible.builtin.copy:
@@ -8,3 +14,20 @@
         mode: '0644'
         owner: ubuntu
         group: ubuntu
+
+    - name: Create default containers
+      community.docker.docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        image: "{{ default_container_image }}"
+        state: started
+        ports:
+          - 8080:8080
+        mounts:
+          - type: bind
+            source: /home/ubuntu/config/config.yaml
+            target: /config/config.yaml
+        detach: true
+        command: "{{ default_container_command }}"
+        restart_policy: always
+        restart: true
+      with_sequence: count={{ container_count }}
