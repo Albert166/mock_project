@@ -1,5 +1,5 @@
 - hosts: all
-  become: false
+  become: true
   vars:
     container_count: 1
     default_container_name: gatus
@@ -73,7 +73,7 @@
       community.docker.docker_container:
         name: "{{ default_container_name }}{{ item }}"
         image: "{{ default_container_image }}"
-        state: present
+        state: started
         ports:
           - 8080:8080
         mounts:
