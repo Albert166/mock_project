@@ -1,5 +1,5 @@
 endpoints:
-  - name: website                 # Name of your endpoint, can be anything
+  - name: site                 # Name of your endpoint, can be anything
     url: "https://twin.sh/health"
     interval: 5m                  # Duration to wait between every status check (default: 60s)
     conditions:
