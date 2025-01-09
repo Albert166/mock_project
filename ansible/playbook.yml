@@ -80,6 +80,8 @@
             target: /config/config.yaml
         detach: true
         command: "{{ default_container_command }}"
+        restart_policy: always
+        restart: true
       with_sequence: count={{ container_count }}
 
     - name: Check running Docker containers
