@@ -2,6 +2,9 @@ name: Keep gatus config file up to date
 
 on:
   workflow_dispatch:
+  push: # Trigger automatically on specific file changes
+    paths:
+      - 'gatus/config.yaml' # Trigger only when this file is updated
 
 jobs:
   deploy:
