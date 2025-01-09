@@ -1,0 +1,20 @@
+name: Update Config Workflow
+
+on:
+  push:
+    paths:
+      - 'gatus/config.yaml' # Trigger only when this file is updated
+
+jobs:
+  update-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Run the Ansible playbook
+      - name: Run Ansible Playbook
+        run: |
+          ansible-playbook -i inventory.yml playbook.yml
