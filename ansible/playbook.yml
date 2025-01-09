@@ -47,6 +47,8 @@
         path: /home/ubuntu/config
         state: directory
         mode: '0755'
+        owner: ubuntu
+        group: ubuntu
 
     - name: Copy file with new permissions
       ansible.builtin.copy:
