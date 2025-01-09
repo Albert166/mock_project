@@ -1,5 +1,5 @@
 all:
   hosts:
     ec2:
-      ansible_host: ec2-18-194-33-99.eu-central-1.compute.amazonaws.com
+      ansible_host: ec2-35-159-115-167.eu-central-1.compute.amazonaws.com
       ansible_user: ubuntu
