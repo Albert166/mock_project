@@ -33,8 +33,9 @@ jobs:
       - name: Install Ansible
         shell: bash
         run: |
-          sudo apt update
-          sudo apt install -y ansible
+          pip3 install ansible
+          pip3 install requests
+          pip3 install python-dateutil
       
       - name: Install boto3 and botocore
         run: |
