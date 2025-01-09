@@ -38,9 +38,9 @@ jobs:
       
       - name: Install boto3 and botocore
         run: |
-          pip install boto3
-          pip install botocore
-          
+          pip3 install boto3
+          pip3 install botocore
+
       - name: Install amazon-aws pluigin
         shell: bash
         run : ansible-galaxy collection install amazon.aws
