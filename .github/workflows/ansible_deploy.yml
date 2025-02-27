@@ -48,3 +48,6 @@ jobs:
           ANSIBLE_HOST_KEY_CHECKING: False
         run: |
           ansible-playbook -i aws_ec2.yml playbook.yml --private-key private_key.pem -u ubuntu
+      
+      - name: Show adress of Gatus instance
+        run: ansible-inventory -i aws_ec2.yaml --list | grep public_dns_name | head -1
