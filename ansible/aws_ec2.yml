@@ -4,4 +4,4 @@ regions:
   - us-west-1
 include_filters:
   - tag:Name:
-      - 'Gatus'
+      - "Gatus"
