@@ -1,7 +1,6 @@
 plugin: amazon.aws.aws_ec2
 regions:
-  - us-east-1
-  - us-west-1
+  - eu-central-1
 include_filters:
   - tag:Name:
       - "Gatus"
