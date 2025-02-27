@@ -11,7 +11,7 @@ resource "aws_instance" "example" {
   subnet_id = aws_subnet.main-b.id
   associate_public_ip_address = true
   tags = {
-    Name = "Gatus Instance"
+    Name = "Gatus"
   }
 }
 
