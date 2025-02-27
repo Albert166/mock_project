@@ -15,7 +15,7 @@
         owner: ubuntu
         group: ubuntu
 
-    - name: Create default containers
+    - name: Recreate Containers with new configuration
       community.docker.docker_container:
         name: "{{ default_container_name }}{{ item }}"
         image: "{{ default_container_image }}"
