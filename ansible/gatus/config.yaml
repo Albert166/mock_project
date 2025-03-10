@@ -1,6 +1,6 @@
 endpoints:
   - name: shopping-list-webapp                 # Name of your endpoint, can be anything
-    url: "http://ec2-3-121-162-235.eu-central-1.compute.amazonaws.com/"
+    url: "http://ec2-18-184-168-46.eu-central-1.compute.amazonaws.com/"
     interval: 5m                  # Duration to wait between every status check (default: 60s)
     conditions:
       - "[STATUS] == 200"         # Status must be 200
